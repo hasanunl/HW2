@@ -3,9 +3,9 @@ class Customer < ApplicationRecord
         self.full_name = self.full_name.delete(' ') if attribute_present?("full_name")
     end
     validates :full_name,presence: true
-    has_many :reservations
+    has_many :reservations ,dependent: :destroy
 
-    private
+    
 
 
 end
